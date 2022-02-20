@@ -13,6 +13,7 @@
 		A87A721427B6C9E8003FAF66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87A721227B6C9E8003FAF66 /* Main.storyboard */; };
 		A87A721627B6C9EA003FAF66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87A721527B6C9EA003FAF66 /* Assets.xcassets */; };
 		A87A721927B6C9EA003FAF66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87A721727B6C9EA003FAF66 /* LaunchScreen.storyboard */; };
+		A8F48D2127C2CAC70031A024 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F48D2027C2CAC70031A024 /* AuthorizationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A87A721527B6C9EA003FAF66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A87A721827B6C9EA003FAF66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A87A721A27B6C9EA003FAF66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8F48D2027C2CAC70031A024 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A87A720C27B6C9E8003FAF66 /* AppDelegate.swift */,
 				A87A720E27B6C9E8003FAF66 /* SceneDelegate.swift */,
 				A87A721027B6C9E8003FAF66 /* ViewController.swift */,
+				A8F48D2027C2CAC70031A024 /* AuthorizationViewController.swift */,
 				A87A721227B6C9E8003FAF66 /* Main.storyboard */,
 				A87A721527B6C9EA003FAF66 /* Assets.xcassets */,
 				A87A721727B6C9EA003FAF66 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F48D2127C2CAC70031A024 /* AuthorizationViewController.swift in Sources */,
 				A87A721127B6C9E8003FAF66 /* ViewController.swift in Sources */,
 				A87A720D27B6C9E8003FAF66 /* AppDelegate.swift in Sources */,
 				A87A720F27B6C9E8003FAF66 /* SceneDelegate.swift in Sources */,
