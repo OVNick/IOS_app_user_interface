@@ -55,9 +55,12 @@ class AuthorizationViewController: UIViewController {
         guard let login = loginTextField.text,
               let password = passwordTextField.text,
               login == "",
-              password == "" else {return}
+              password == "" else {
+                  show(message: "Неверный логин или пароль!")
+                  return}
         
         performSegue(withIdentifier: "Login", sender: nil)
     }
 
+    
 }
