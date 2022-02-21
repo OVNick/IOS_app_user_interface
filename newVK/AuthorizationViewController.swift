@@ -8,8 +8,10 @@
 import UIKit
 
 class AuthorizationViewController: UIViewController {
-
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var loginTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,15 @@ class AuthorizationViewController: UIViewController {
         let keyboardHeight = keyboardSize.cgRectValue.size.height
         
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -keyboardHeight, right: 0)
+    }
+    
+    @IBAction func tapButtonLogin(_ sender: Any) {
+        guard let login = loginTextField.text,
+              let password = passwordTextField.text,
+              login == "",
+              password == "" else {return}
+        
+        performSegue(withIdentifier: "Login", sender: nil)
     }
 
 }
