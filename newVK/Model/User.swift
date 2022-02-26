@@ -8,13 +8,15 @@
 import UIKit
 
 class User {
-    let image: UIImage?
+    var userID: Int = 0
+    var avatar: UIImage?
     let name: String
-    let photo: [String]
+    let photo: [UIImage?]
 
-    init(image: UIImage? = nil, name: String, photo: [String] = []) {
-        self.image = image
+    init(image: UIImage? = nil, name: String, photo: [UIImage?] = []) {
+        self.avatar = image
         self.name = name
         self.photo = photo
+        self.userID += 1
     }
 }

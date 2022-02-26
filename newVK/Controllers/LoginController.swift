@@ -8,16 +8,14 @@
 import UIKit
 
 class AuthorizationViewController: UIViewController {
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(hideScreen))
         view.addGestureRecognizer(tapGR)
     }
@@ -62,5 +60,4 @@ class AuthorizationViewController: UIViewController {
         performSegue(withIdentifier: "Login", sender: nil)
     }
 
-    
 }

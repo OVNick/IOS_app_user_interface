@@ -8,16 +8,8 @@
 import UIKit
 
 class AllGroupController: UITableViewController {
-
-    var group = [
-        Group(image: UIImage.init(named: "Avengers"), name: "Подслушано Мстители"),
-        Group(image: UIImage.init(named: "Einstein_01"), name: "Все относительно"),
-        Group(image: UIImage.init(named: "Cumberbatch"), name: "Овсянка, сэр!"),
-        Group(image: UIImage.init(named: "Tesla"), name: "Что такое электричество?"),
-        Group(image: UIImage.init(named: "Perov"), name: "Охота"),
-        Group(image: UIImage.init(named: "Fishing"), name: "Рыбалка"),
-        Group(image: UIImage.init(named: "Sport"), name: "Спорт")
-    ]
+    
+    let objects = GroupsInstances()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +30,15 @@ class AllGroupController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return group.count
+        return objects.allGroups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AllGroupCell", for: indexPath) as? AllGroupCell else {
             preconditionFailure("Error")
         }
-        cell.imageAllGroupCell.image = group[indexPath.row].image
-        cell.labelAllGroupCell.text = group[indexPath.row].name
+        cell.imageAllGroupCell.image = objects.allGroups[indexPath.row].image
+        cell.labelAllGroupCell.text = objects.allGroups[indexPath.row].name
         
         return cell
     }
