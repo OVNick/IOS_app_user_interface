@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AllGroupController: UITableViewController {
+class AllGroupsController: UITableViewController {
     
     let objects = GroupsInstances()
     
@@ -34,7 +34,7 @@ class AllGroupController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AllGroupCell", for: indexPath) as? AllGroupCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AllGroupCell", for: indexPath) as? AllGroupsCell else {
             preconditionFailure("Error")
         }
         cell.imageAllGroupCell.image = objects.allGroups[indexPath.row].image

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GroupController: UITableViewController {
+class MyGroupsController: UITableViewController {
     
     var objects = GroupsInstances()
     
@@ -39,7 +39,7 @@ class GroupController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as? GroupCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as? MyGroupsCell else {
             preconditionFailure("Groupcell cannot")
         }
         cell.imageGroupCell.image = objects.myGroups[indexPath.row].image
@@ -48,7 +48,7 @@ class GroupController: UITableViewController {
     }
     
     @IBAction func addSelectedGroup(segue: UIStoryboardSegue) {
-        if let sourceVC = segue.source as? AllGroupController,
+        if let sourceVC = segue.source as? AllGroupsController,
            let indexPath = sourceVC.tableView.indexPathForSelectedRow {
             let newGroup = sourceVC.objects.allGroups[indexPath.row]
             if !objects.myGroups.contains(where: {$0.name == newGroup.name}) {

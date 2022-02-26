@@ -7,9 +7,9 @@
 
 import UIKit
 
-class AuthorizationViewController: UIViewController {
+class LoginController: UIViewController {
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
