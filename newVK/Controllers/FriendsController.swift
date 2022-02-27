@@ -37,12 +37,20 @@ class FriendsController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsCell", for: indexPath) as? FriendsCell else {
             preconditionFailure("Friendscell cannot")
         }
+        
         cell.imageFriendsCell.image = objects.myFriends[indexPath.row].avatar
         cell.labelFriendsCell.text = objects.myFriends[indexPath.row].name
 
         return cell
     }
         
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "showPhoto",
+              let destinationVC = segue.destination as? PhotoController,
+              let indexPath = tableView.indexPathForSelectedRow else { return }
+        destinationVC.images = objects.myFriends[indexPath.row].photo
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

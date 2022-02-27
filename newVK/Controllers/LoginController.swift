@@ -32,17 +32,16 @@ class LoginController: UIViewController {
     
     @objc func willShowKeyboard(_ notification: Notification) {
         guard let info = notification.userInfo as NSDictionary?,
-              let keyboardSize = info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue else {return}
+              let keyboardSize = info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue else { return }
         
         let keyboardHeight = keyboardSize.cgRectValue.size.height
         
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
-        
     }
     
     @objc func willHideKeyboard(_ notification: Notification) {
         guard let info = notification.userInfo as NSDictionary?,
-              let keyboardSize = info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue else {return}
+              let keyboardSize = info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue else { return }
         
         let keyboardHeight = keyboardSize.cgRectValue.size.height
         
@@ -55,7 +54,8 @@ class LoginController: UIViewController {
               login == "",
               password == "" else {
                   show(message: "Неверный логин или пароль!")
-                  return}
+                  return
+              }
         
         performSegue(withIdentifier: "Login", sender: nil)
     }

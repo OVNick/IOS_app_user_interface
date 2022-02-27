@@ -10,12 +10,7 @@ import UIKit
 class MyGroupsController: UITableViewController {
     
     var objects = GroupsInstances()
-    
-//    var group = [
-//        Group(image: UIImage.init(named: "Avengers"), name: "Подслушано Мстители"),
-//        Group(image: UIImage.init(named: "Einstein_01"), name: "Все относительно")
-//    ]
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,19 +37,22 @@ class MyGroupsController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as? MyGroupsCell else {
             preconditionFailure("Groupcell cannot")
         }
+        
         cell.imageGroupCell.image = objects.myGroups[indexPath.row].image
         cell.labelGroupCell.text = objects.myGroups[indexPath.row].name
+        
         return cell
     }
     
     @IBAction func addSelectedGroup(segue: UIStoryboardSegue) {
-        if let sourceVC = segue.source as? AllGroupsController,
-           let indexPath = sourceVC.tableView.indexPathForSelectedRow {
-            let newGroup = sourceVC.objects.allGroups[indexPath.row]
-            if !objects.myGroups.contains(where: {$0.name == newGroup.name}) {
-                objects.myGroups.append(newGroup)
-                tableView.reloadData()
-            }
+        guard let sourceVC = segue.source as? AllGroupsController,
+              let indexPath = sourceVC.tableView.indexPathForSelectedRow else { return }
+        
+        let newGroup = sourceVC.objects.allGroups[indexPath.row]
+        
+        if !objects.myGroups.contains(where: {$0.name == newGroup.name}) {
+            objects.myGroups.append(newGroup)
+            tableView.reloadData()
         }
     }
 

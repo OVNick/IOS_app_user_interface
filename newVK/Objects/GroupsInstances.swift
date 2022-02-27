@@ -10,16 +10,16 @@ import UIKit
 struct GroupsInstances {
     let allGroups = [
         Group(image: UIImage.init(named: "Avengers"), name: "Подслушано Мстители"),
-        Group(image: UIImage.init(named: "Einstein_01"), name: "Все относительно"),
-        Group(image: UIImage.init(named: "Cumberbatch"), name: "Овсянка, сэр!"),
-        Group(image: UIImage.init(named: "Tesla"), name: "Что такое электричество?"),
+        Group(image: UIImage.init(named: "1_2"), name: "Все относительно"),
+        Group(image: UIImage.init(named: "5_2"), name: "Овсянка, сэр!"),
+        Group(image: UIImage.init(named: "2_1"), name: "Что такое электричество?"),
         Group(image: UIImage.init(named: "Perov"), name: "Охота"),
         Group(image: UIImage.init(named: "Fishing"), name: "Рыбалка"),
-        Group(image: UIImage.init(named: "Sport"), name: "Спорт")
+        Group(image: UIImage.init(named: "10_2"), name: "Спорт")
     ]
     
     var myGroups = [
         Group(image: UIImage.init(named: "Avengers"), name: "Подслушано Мстители"),
-        Group(image: UIImage.init(named: "Einstein_01"), name: "Все относительно")
+        Group(image: UIImage.init(named: "1_2"), name: "Все относительно")
     ]
 }

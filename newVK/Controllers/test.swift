@@ -1,17 +1,15 @@
 //
-//  PhotoController.swift
+//  test.swift
 //  newVK
 //
-//  Created by Николай Онучин on 23.02.2022.
+//  Created by Николай Онучин on 27.02.2022.
 //
 
 import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class PhotoController: UICollectionViewController {
-    
-    var images: [UIImage?] = []
+class test: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +19,7 @@ class PhotoController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+
         // Do any additional setup after loading the view.
     }
 
@@ -38,24 +37,23 @@ class PhotoController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return images.count
+        return 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCell else { preconditionFailure("Error")
-        }
-        
-        cell.photoImage.image = images[indexPath.row]
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+    
+        // Configure the cell
+    
         return cell
     }
-    
+
     // MARK: UICollectionViewDelegate
 
     /*

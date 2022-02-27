@@ -410,7 +410,7 @@
                                 <connections>
                                     <outlet property="imageFriendsCell" destination="Z3z-yB-vCv" id="6cK-r0-3mY"/>
                                     <outlet property="labelFriendsCell" destination="TbS-OF-dVY" id="5fa-Gg-j6h"/>
-                                    <segue destination="yxJ-Kk-hdv" kind="show" identifier="ShowPictures" id="IGW-Hd-uQ8"/>
+                                    <segue destination="yxJ-Kk-hdv" kind="show" identifier="showPhoto" id="IGW-Hd-uQ8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
