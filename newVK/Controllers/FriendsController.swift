@@ -48,7 +48,7 @@ class FriendsController: UITableViewController {
         guard segue.identifier == "showPhoto",
               let destinationVC = segue.destination as? AllPhotoController,
               let indexPath = tableView.indexPathForSelectedRow else { return }
-        destinationVC.images = objects.myFriends[indexPath.row].photo
+        destinationVC.someObject = objects.myFriends[indexPath.row]
     }
     
     /*

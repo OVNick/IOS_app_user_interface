@@ -8,15 +8,18 @@
 import UIKit
 
 class User {
-    var userID: Int = 0
-    var avatar: UIImage?
+    var id: UInt = 0
+    let avatar: UIImage?
     let name: String
     let photo: [UIImage?]
+    //var likeCounter: Set<[String: UInt]> // [photoTitle: id]
+    var like: UInt
 
-    init(image: UIImage? = nil, name: String, photo: [UIImage?] = []) {
+    init(image: UIImage? = nil, name: String, photo: [UIImage?] = [], like: UInt = 0) {
         self.avatar = image
         self.name = name
         self.photo = photo
-        self.userID += 1
+        self.id += 1
+        self.like = like
     }
 }

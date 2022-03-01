@@ -11,7 +11,7 @@ private let reuseIdentifier = "Cell"
 
 class AllPhotoController: UICollectionViewController {
     
-    var images: [UIImage?] = []
+    var someObject: User = User(image: UIImage.init(named: "name"), name: "image", photo: [], like: 0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,14 +44,16 @@ class AllPhotoController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return images.count
+        return someObject.photo.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCell else { preconditionFailure("Error")
         }
         
-        cell.photoImage.image = images[indexPath.row]
+        cell.photoImage.image = someObject.photo[indexPath.row]
+        cell.likeControl.likeCounter = someObject.like
+        cell.likeControl.likeLabel.text = "\(someObject.like)"
         
         return cell
     }

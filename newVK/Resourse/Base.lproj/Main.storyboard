@@ -455,21 +455,32 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMU-Y1-L0c" customClass="LikeControl" customModule="newVK" customModuleProvider="target">
-                                            <rect key="frame" x="64" y="64" width="32" height="32"/>
+                                            <rect key="frame" x="0.0" y="64" width="96" height="32"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VYv-CY-TVz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                    <rect key="frame" x="64" y="0.0" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="VYv-CY-TVz" secondAttribute="height" multiplier="1:1" id="hUX-Xb-6ew"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59L-RY-Aev">
+                                                    <rect key="frame" x="2" y="5.5" width="54" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="VYv-CY-TVz" secondAttribute="trailing" id="30H-Wb-PTv"/>
                                                 <constraint firstAttribute="height" constant="32" id="7m4-41-dUy"/>
                                                 <constraint firstItem="VYv-CY-TVz" firstAttribute="top" secondItem="NMU-Y1-L0c" secondAttribute="top" id="9sc-5Z-P3e"/>
                                                 <constraint firstAttribute="bottom" secondItem="VYv-CY-TVz" secondAttribute="bottom" id="EYY-uk-qS4"/>
-                                                <constraint firstAttribute="width" secondItem="NMU-Y1-L0c" secondAttribute="height" multiplier="1:1" id="t4c-vT-WCZ"/>
-                                                <constraint firstItem="VYv-CY-TVz" firstAttribute="leading" secondItem="NMU-Y1-L0c" secondAttribute="leading" id="z3c-Wo-lzc"/>
+                                                <constraint firstItem="59L-RY-Aev" firstAttribute="leading" secondItem="NMU-Y1-L0c" secondAttribute="leading" constant="2" id="WYK-68-eVe"/>
+                                                <constraint firstItem="59L-RY-Aev" firstAttribute="centerY" secondItem="VYv-CY-TVz" secondAttribute="centerY" id="oMi-kL-LZ3"/>
+                                                <constraint firstItem="VYv-CY-TVz" firstAttribute="leading" secondItem="59L-RY-Aev" secondAttribute="trailing" constant="8" symbolic="YES" id="zl3-Bl-mIl"/>
                                             </constraints>
                                             <connections>
+                                                <outlet property="likeLabel" destination="59L-RY-Aev" id="TNo-i9-CQJ"/>
                                                 <outlet property="likePicture" destination="VYv-CY-TVz" id="7pg-uh-ssc"/>
                                             </connections>
                                         </view>
@@ -480,6 +491,7 @@
                                         <constraint firstItem="f0j-QY-ycq" firstAttribute="top" secondItem="Gib-QW-Nzx" secondAttribute="top" id="KuQ-4M-niH"/>
                                         <constraint firstAttribute="trailing" secondItem="f0j-QY-ycq" secondAttribute="trailing" priority="999" id="Qwh-5L-Abh"/>
                                         <constraint firstAttribute="bottom" secondItem="NMU-Y1-L0c" secondAttribute="bottom" id="V7u-Wm-sw3"/>
+                                        <constraint firstItem="NMU-Y1-L0c" firstAttribute="leading" secondItem="Gib-QW-Nzx" secondAttribute="leading" id="YCm-Kl-hEN"/>
                                         <constraint firstAttribute="bottom" secondItem="f0j-QY-ycq" secondAttribute="bottom" priority="999" id="aZV-n5-3ql"/>
                                     </constraints>
                                 </collectionViewCellContentView>
@@ -505,7 +517,7 @@
         <scene sceneID="WZM-1E-RGI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RV4-IZ-lmD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Друзья" id="so7-HT-lr0"/>
+                    <tabBarItem key="tabBarItem" title="Друзья" image="person.2" catalog="system" id="so7-HT-lr0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bwb-jN-ewr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -524,7 +536,7 @@
         <scene sceneID="y5T-G2-NFt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6dd-ba-adM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Группы" id="Bpz-OP-Odr"/>
+                    <tabBarItem key="tabBarItem" title="Группы" image="person.3" catalog="system" id="Bpz-OP-Odr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="m8C-jE-zgE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -542,6 +554,8 @@
     </scenes>
     <resources>
         <image name="logo" width="341" height="341"/>
+        <image name="person.2" catalog="system" width="128" height="81"/>
+        <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="plus" catalog="system" width="128" height="113"/>
