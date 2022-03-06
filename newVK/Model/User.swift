@@ -12,7 +12,7 @@ class User {
     let avatar: UIImage?
     let name: String
     let photo: [UIImage?]
-    //var likeCounter: Set<[String: UInt]> // [photoTitle: id]
+    //var likeCounter: Set<[String: UInt]> // [photoTitle: [id]]
     var like: UInt
 
     init(image: UIImage? = nil, name: String, photo: [UIImage?] = [], like: UInt = 0) {
