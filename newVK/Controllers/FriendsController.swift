@@ -8,29 +8,17 @@
 import UIKit
 
 class FriendsController: UITableViewController {
-
-    let friends = [
-        User(image: UIImage.init(named: "Einstein"), name: "Альберт Эйнштейн", photo: ["Einstein", "Einstein_1"]),
-        User(image: UIImage.init(named: "Tesla"), name: "Никола Тесла"),
-        User(image: UIImage.init(named: "Downey"), name: "Роберт Дауни"),
-        User(image: UIImage.init(named: "Johansson"), name: "Скарлетт Йоханссон"),
-        User(image: UIImage.init(named: "Cumberbatch_01"), name: "Бенедикт Камбербэтч"),
-        User(image: UIImage.init(named: "Hardy"), name: "Томас Харди"),
-        User(image: UIImage.init(named: "Larson"), name: "Бри Ларсон"),
-        User(image: UIImage.init(named: "Jobs"), name: "Стив Джобс"),
-        User(image: UIImage.init(named: "Zendaya"), name: "Зендея"),
-        User(image: UIImage.init(named: "Hemsworth"), name: "Крис Хемсворт"),
-        User(image: UIImage.init(named: "Holland"), name: "Том Холланд")
-    ]
     
+    let objects = FriendsInstances()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        //self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -42,19 +30,27 @@ class FriendsController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return friends.count
+        return objects.myFriends.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsCell", for: indexPath) as? FriendsCell else {
             preconditionFailure("Friendscell cannot")
         }
-        cell.imageFriendsCell.image = friends[indexPath.row].image
-        cell.labelFriendsCell.text = friends[indexPath.row].name
+        
+        cell.imageFriendsCell.image = objects.myFriends[indexPath.row].avatar
+        cell.labelFriendsCell.text = objects.myFriends[indexPath.row].name
 
         return cell
     }
         
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "showPhoto",
+              let destinationVC = segue.destination as? AllPhotoController,
+              let indexPath = tableView.indexPathForSelectedRow else { return }
+        destinationVC.someObject = objects.myFriends[indexPath.row]
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

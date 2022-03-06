@@ -1,5 +1,5 @@
 //
-//  AllGroupController.swift
+//  GroupController.swift
 //  newVK
 //
 //  Created by Николай Онучин on 23.02.2022.
@@ -7,18 +7,10 @@
 
 import UIKit
 
-class AllGroupController: UITableViewController {
-
-    var group = [
-        Group(image: UIImage.init(named: "Avengers"), name: "Подслушано Мстители"),
-        Group(image: UIImage.init(named: "Einstein_01"), name: "Все относительно"),
-        Group(image: UIImage.init(named: "Cumberbatch"), name: "Овсянка, сэр!"),
-        Group(image: UIImage.init(named: "Tesla"), name: "Что такое электричество?"),
-        Group(image: UIImage.init(named: "Perov"), name: "Охота"),
-        Group(image: UIImage.init(named: "Fishing"), name: "Рыбалка"),
-        Group(image: UIImage.init(named: "Sport"), name: "Спорт")
-    ]
+class MyGroupsController: UITableViewController {
     
+    var objects = GroupsInstances()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,17 +30,30 @@ class AllGroupController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return group.count
+        return objects.myGroups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AllGroupCell", for: indexPath) as? AllGroupCell else {
-            preconditionFailure("Error")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as? MyGroupsCell else {
+            preconditionFailure("Groupcell cannot")
         }
-        cell.imageAllGroupCell.image = group[indexPath.row].image
-        cell.labelAllGroupCell.text = group[indexPath.row].name
+        
+        cell.imageGroupCell.image = objects.myGroups[indexPath.row].image
+        cell.labelGroupCell.text = objects.myGroups[indexPath.row].name
         
         return cell
+    }
+    
+    @IBAction func addSelectedGroup(segue: UIStoryboardSegue) {
+        guard let sourceVC = segue.source as? AllGroupsController,
+              let indexPath = sourceVC.tableView.indexPathForSelectedRow else { return }
+        
+        let newGroup = sourceVC.objects.allGroups[indexPath.row]
+        
+        if !objects.myGroups.contains(where: {$0.name == newGroup.name}) {
+            objects.myGroups.append(newGroup)
+            tableView.reloadData()
+        }
     }
 
     /*
@@ -59,17 +64,15 @@ class AllGroupController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            objects.myGroups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+   
 
     /*
     // Override to support rearranging the table view.
