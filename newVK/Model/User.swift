@@ -8,18 +8,44 @@
 import UIKit
 
 class User {
-    var id: UInt = 0
-    let avatar: UIImage?
-    let name: String
-    let photo: [UIImage?]
-    var like: UInt
-    var ratingLike: [UInt: [String: [UInt]]] // [id: [photoTitle: [id]]]
+    var id: Int
+    var avatar: UIImage?
+    var name: String
+    var photo: [UIImage?]
+    var like: Int
+    var ratingLike: [[Int]]
+    
+    func createUser(_ userName: String) {
+        id += 1
+        name = userName
+    }
+    
+    func addAnAvatar(_ userAvatar: UIImage?) {
+        avatar = userAvatar
+    }
+    
+    func addPhoto(_ userPhotos: [UIImage?]) {
+        photo = userPhotos
+    }
+    
+    func addRating(_ userRatingLike: [[Int]]) {
+        ratingLike = userRatingLike
+    }
 
-    init(image: UIImage? = nil, name: String, photo: [UIImage?] = [], like: UInt = 0, ratingLike: [UInt: [String: [UInt]]] = [0: ["": []]]) {
+    init(){
+        self.avatar = nil
+        self.name = ""
+        self.photo = []
+        self.id = 0
+        self.like = 0
+        self.ratingLike = [[]]
+    }
+    
+    init(id: Int, image: UIImage?, name: String, photo: [UIImage?], like: Int, ratingLike: [[Int]]) {
         self.avatar = image
         self.name = name
         self.photo = photo
-        self.id += 1
+        self.id = id
         self.like = like
         self.ratingLike = ratingLike
     }

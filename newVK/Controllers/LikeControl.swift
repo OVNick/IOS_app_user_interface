@@ -13,7 +13,7 @@ class LikeControl: UIControl {
     @IBOutlet var likeLabel: UILabel!
     
     var isLike: Bool = false
-    var likeCounter: UInt = 0
+    var likeCounter: Int = 0
     
     override func awakeFromNib() {
         

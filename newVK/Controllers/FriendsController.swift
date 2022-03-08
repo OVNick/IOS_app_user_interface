@@ -9,7 +9,7 @@ import UIKit
 
 class FriendsController: UITableViewController {
     
-    let objects = FriendsInstances()
+    var objects = FriendsInstances()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class FriendsController: UITableViewController {
         guard segue.identifier == "showAllPhoto",
               let destinationVC = segue.destination as? AllPhotoController,
               let indexPath = tableView.indexPathForSelectedRow else { return }
-        destinationVC.someObject = objects.myFriends[indexPath.row]
+        destinationVC.object = objects.myFriends[indexPath.row]
     }
     
     /*

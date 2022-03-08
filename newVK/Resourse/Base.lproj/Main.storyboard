@@ -482,19 +482,19 @@
         <!--Photo Controller-->
         <scene sceneID="32Y-Pu-93B">
             <objects>
-                <viewController id="TDR-bP-j2k" customClass="PhotoController" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="TDR-bP-j2k" customClass="PhotoController" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dho-7L-ADj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MOl-dS-nTV">
-                                <rect key="frame" x="0.0" y="89" width="414" height="722.5"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="771.5"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyF-C0-rlW" customClass="PhotoRatingView" customModule="newVK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="781" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="814" width="414" height="48"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqs-rI-JfJ" customClass="LikeControl" customModule="newVK" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="0.0" width="80" height="32"/>
+                                        <rect key="frame" x="32" y="8" width="80" height="32"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="m4d-X5-tfl">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="32"/>
@@ -535,11 +535,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="vqs-rI-JfJ" secondAttribute="bottom" id="MSk-oh-uZl"/>
+                                    <constraint firstAttribute="bottom" secondItem="vqs-rI-JfJ" secondAttribute="bottom" constant="8" id="MSk-oh-uZl"/>
                                     <constraint firstAttribute="centerX" secondItem="vqs-rI-JfJ" secondAttribute="centerX" priority="999" constant="160" id="NUg-bS-FYb"/>
-                                    <constraint firstAttribute="height" constant="32" id="OCc-sK-i9Q"/>
+                                    <constraint firstAttribute="height" constant="48" id="OCc-sK-i9Q"/>
                                     <constraint firstItem="vqs-rI-JfJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QyF-C0-rlW" secondAttribute="leading" constant="32" id="c4J-5A-7ri"/>
-                                    <constraint firstItem="vqs-rI-JfJ" firstAttribute="top" secondItem="QyF-C0-rlW" secondAttribute="top" id="gx3-T6-Zxl"/>
+                                    <constraint firstItem="vqs-rI-JfJ" firstAttribute="top" secondItem="QyF-C0-rlW" secondAttribute="top" constant="8" id="gx3-T6-Zxl"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="container" destination="m4d-X5-tfl" id="SXf-EO-iIM"/>
