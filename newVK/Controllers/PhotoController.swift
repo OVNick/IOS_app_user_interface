@@ -2,21 +2,39 @@
 //  PhotoController.swift
 //  newVK
 //
-//  Created by Николай Онучин on 28.02.2022.
+//  Created by Николай Онучин on 06.03.2022.
 //
 
 import UIKit
 
 class PhotoController: UIViewController {
+
+    @IBOutlet var userPhoto: UIImageView!
+    @IBOutlet var likeControl: LikeControl!
     
-    @IBOutlet var pictureImageView: UIImageView!
+    var someUser: User = User(image: UIImage.init(named: "name"), name: "image", photo: [], like: 0)
+    var index: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        userPhoto.image = someUser.photo[index]
+        likeControl.likeCounter = someUser.like
+        
+        likeControl.likePicture.backgroundColor = .clear
+        likeControl.likePicture.tintColor = .lightGray
+        likeControl.likePicture.image = UIImage(systemName: "suit.heart")
+        
+        likeControl.likeLabel.backgroundColor = .clear
+        likeControl.likeLabel.textColor = .lightGray
+        guard likeControl.likeCounter > 0 else {
+            likeControl.likeLabel.text = ""
+            return
+        }
+        likeControl.likeLabel.text = "\(likeControl.likeCounter)"
     }
-
+    
+    
     
     /*
     // MARK: - Navigation

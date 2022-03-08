@@ -45,7 +45,7 @@ class FriendsController: UITableViewController {
     }
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "showPhoto",
+        guard segue.identifier == "showAllPhoto",
               let destinationVC = segue.destination as? AllPhotoController,
               let indexPath = tableView.indexPathForSelectedRow else { return }
         destinationVC.someObject = objects.myFriends[indexPath.row]
