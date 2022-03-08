@@ -11,7 +11,7 @@ private let reuseIdentifier = "Cell"
 
 class AllPhotoController: UICollectionViewController {
     
-    var someObject: User = User(image: UIImage.init(named: "name"), name: "image", photo: [], like: 0)
+    var object: User = User(id: 0, image: UIImage.init(named: "name"), name: "image", photo: [], like: 0, ratingLike: [[]])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +24,19 @@ class AllPhotoController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showPhoto" {
+            let indexPaths = self.collectionView!.indexPathsForSelectedItems!
+            let indexPath = indexPaths[0] as NSIndexPath
+            let destinationVC = segue.destination as! PhotoController
+            destinationVC.object = object
+            destinationVC.index = indexPath.row
+        }
     }
-    */
-
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -44,20 +47,17 @@ class AllPhotoController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return someObject.photo.count
+        return object.photo.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCell else { preconditionFailure("Error")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? AllPhotoCell else { preconditionFailure("Error")
         }
         
-        cell.photoImage.image = someObject.photo[indexPath.row]
-        cell.likeControl.likeCounter = someObject.like
-        cell.likeControl.likeLabel.text = "\(someObject.like)"
-        
+        cell.photoImage.image = object.photo[indexPath.row]        
         return cell
     }
-    
+            
     // MARK: UICollectionViewDelegate
 
     /*

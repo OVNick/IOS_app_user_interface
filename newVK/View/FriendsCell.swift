@@ -8,6 +8,7 @@
 import UIKit
 
 class FriendsCell: UITableViewCell {
+    
     @IBOutlet var imageFriendsCell: UIImageView!
     @IBOutlet var labelFriendsCell: UILabel!
 }

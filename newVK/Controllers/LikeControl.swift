@@ -13,19 +13,15 @@ class LikeControl: UIControl {
     @IBOutlet var likeLabel: UILabel!
     
     var isLike: Bool = false
-    var likeCounter: UInt = 0
+    var likeCounter: Int = 0
     
     override func awakeFromNib() {
+        
         likePicture.backgroundColor = .clear
         likePicture.tintColor = .lightGray
         likePicture.image = UIImage(systemName: "suit.heart")
         
         likeLabel.backgroundColor = .clear
         likeLabel.textColor = .lightGray
-        guard likeCounter > 0 else {
-            likeLabel.text = ""
-            return
-        }
-        likeLabel.text = "\(likeCounter)"
     }
 }

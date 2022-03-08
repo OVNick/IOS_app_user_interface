@@ -8,6 +8,7 @@
 import UIKit
 
 class AllGroupsCell: UITableViewCell {
+    
     @IBOutlet var imageAllGroupCell: UIImageView!
     @IBOutlet var labelAllGroupCell: UILabel!
 }

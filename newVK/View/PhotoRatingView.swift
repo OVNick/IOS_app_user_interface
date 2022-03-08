@@ -1,27 +1,26 @@
 //
-//  PhotoCell.swift
+//  LikeView.swift
 //  newVK
 //
-//  Created by Николай Онучин on 23.02.2022.
+//  Created by Николай Онучин on 06.03.2022.
 //
 
 import UIKit
 
-class PhotoCell: UICollectionViewCell {
-    
-    @IBOutlet var photoImage: UIImageView!
+class PhotoRatingView: UIView {
+
     @IBOutlet var likeControl: LikeControl!
-    @IBOutlet var container: UIView!
+    @IBOutlet var container: UIStackView!
     
     override func awakeFromNib() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(hadleTap))
         tap.numberOfTapsRequired = 1
         container.addGestureRecognizer(tap)
     }
-
+    
     @objc func hadleTap(_ : UITapGestureRecognizer) {
         likeControl.isLike.toggle()
-
+        
         if likeControl.isLike {
             likeControl.likePicture.tintColor = .red
             likeControl.likePicture.image = UIImage(systemName: "suit.heart.fill")
