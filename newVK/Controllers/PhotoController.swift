@@ -19,14 +19,8 @@ class PhotoController: UIViewController {
         super.viewDidLoad()
         
         userPhoto.image = someUser.photo[index]
+        
         likeControl.likeCounter = someUser.like
-        
-        likeControl.likePicture.backgroundColor = .clear
-        likeControl.likePicture.tintColor = .lightGray
-        likeControl.likePicture.image = UIImage(systemName: "suit.heart")
-        
-        likeControl.likeLabel.backgroundColor = .clear
-        likeControl.likeLabel.textColor = .lightGray
         guard likeControl.likeCounter > 0 else {
             likeControl.likeLabel.text = ""
             return
