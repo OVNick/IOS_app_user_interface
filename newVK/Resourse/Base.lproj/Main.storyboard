@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -488,7 +488,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MOl-dS-nTV">
-                                <rect key="frame" x="0.0" y="89" width="414" height="771.5"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="723.5"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyF-C0-rlW" customClass="PhotoRatingView" customModule="newVK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="814" width="414" height="48"/>
@@ -550,7 +550,7 @@
                         <viewLayoutGuide key="safeArea" id="cn5-gf-Pd7"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="cn5-gf-Pd7" firstAttribute="bottom" secondItem="MOl-dS-nTV" secondAttribute="bottom" id="E2l-E7-cbR"/>
+                            <constraint firstItem="QyF-C0-rlW" firstAttribute="bottom" secondItem="MOl-dS-nTV" secondAttribute="bottom" constant="48" id="E2l-E7-cbR"/>
                             <constraint firstItem="cn5-gf-Pd7" firstAttribute="trailing" secondItem="MOl-dS-nTV" secondAttribute="trailing" id="NcN-Gz-lMy"/>
                             <constraint firstItem="MOl-dS-nTV" firstAttribute="top" secondItem="cn5-gf-Pd7" secondAttribute="top" id="SZl-MV-nHJ"/>
                             <constraint firstItem="cn5-gf-Pd7" firstAttribute="trailing" secondItem="QyF-C0-rlW" secondAttribute="trailing" id="kZJ-e7-ONs"/>

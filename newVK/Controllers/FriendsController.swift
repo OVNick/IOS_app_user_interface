@@ -10,27 +10,49 @@ import UIKit
 class FriendsController: UITableViewController {
     
     var objects = FriendsInstances()
-        
+    var sortedObjects = [Character: [User]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.sortedObjects = sort(objects: objects.myFriends)
+        
         // Uncomment the following line to preserve selection between presentations
         //self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    private func sort(objects: [User]) -> [Character: [User]] {
+        
+        var objectsDict = [Character: [User]]()
+        
+        objects.forEach() { object in
+            guard let firstChar = object.name.first else { return }
+            if var thisCharObjects = objectsDict[firstChar] {
+                thisCharObjects.append(object)
+                objectsDict[firstChar] = thisCharObjects
+            } else {
+                objectsDict[firstChar] = [object]
+            }
+        }
+        return objectsDict
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return sortedObjects.keys.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return objects.myFriends.count
+        let keySorted = sortedObjects.keys.sorted()
+        let objects = sortedObjects[keySorted[section]]?.count ?? 0
+        
+        return objects
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,17 +60,31 @@ class FriendsController: UITableViewController {
             preconditionFailure("Friendscell cannot")
         }
         
-        cell.imageFriendsCell.image = objects.myFriends[indexPath.row].avatar
-        cell.labelFriendsCell.text = objects.myFriends[indexPath.row].name
+        let firstChar = sortedObjects.keys.sorted()[indexPath.section]
+        let objects = sortedObjects[firstChar]!
+        let object: User = objects[indexPath.row]
+        
+        cell.imageFriendsCell.image = object.avatar
+        cell.labelFriendsCell.text = object.name
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        String(sortedObjects.keys.sorted()[section])
     }
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showAllPhoto",
               let destinationVC = segue.destination as? AllPhotoController,
               let indexPath = tableView.indexPathForSelectedRow else { return }
-        destinationVC.object = objects.myFriends[indexPath.row]
+        
+        let keys = Array(sortedObjects.keys.sorted())
+        let objectsInKey: [User]
+        
+        objectsInKey = sortedObjects[keys[indexPath.section]]!
+        
+        destinationVC.object = objectsInKey[indexPath.row]
     }
     
     /*
