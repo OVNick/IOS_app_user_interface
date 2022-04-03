@@ -1,0 +1,57 @@
+
+/* Class = "UINavigationItem"; title = "Добавить"; ObjectID = "2b2-w8-623"; */
+"2b2-w8-623.title" = "Добавить";
+
+/* Class = "UITextField"; placeholder = "Пароль"; ObjectID = "ALh-Eb-gKD"; */
+"ALh-Eb-gKD.placeholder" = "Пароль";
+
+/* Class = "UITabBarItem"; title = "Группы"; ObjectID = "Bpz-OP-Odr"; */
+"Bpz-OP-Odr.title" = "Группы";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "DeA-Hw-GU4"; */
+"DeA-Hw-GU4.text" = "1";
+
+/* Class = "UIButton"; configuration.title = "Войти"; ObjectID = "Ir3-RM-VJP"; */
+"Ir3-RM-VJP.configuration.title" = "Войти";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ir3-RM-VJP"; */
+"Ir3-RM-VJP.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TbS-OF-dVY"; */
+"TbS-OF-dVY.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Друзья"; ObjectID = "VLq-Nz-qH8"; */
+"VLq-Nz-qH8.title" = "Друзья";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "X2L-Fc-SyY"; */
+"X2L-Fc-SyY.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Фото"; ObjectID = "Xze-2D-tXt"; */
+"Xze-2D-tXt.title" = "Фото";
+
+/* Class = "UIButton"; configuration.title = "Забыли?"; ObjectID = "YRI-Xo-hxa"; */
+"YRI-Xo-hxa.configuration.title" = "Забыли?";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YRI-Xo-hxa"; */
+"YRI-Xo-hxa.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Мои группы"; ObjectID = "ZaM-bj-wna"; */
+"ZaM-bj-wna.title" = "Мои группы";
+
+/* Class = "UIButton"; configuration.title = "Зарегистрироваться"; ObjectID = "kOc-w9-fU9"; */
+"kOc-w9-fU9.configuration.title" = "Зарегистрироваться";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "kOc-w9-fU9"; */
+"kOc-w9-fU9.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Email или телефон"; ObjectID = "nXR-Qe-NSc"; */
+"nXR-Qe-NSc.placeholder" = "Email или телефон";
+
+/* Class = "UIBarButtonItem"; title = "NewGroup"; ObjectID = "sjm-am-JYL"; */
+"sjm-am-JYL.title" = "NewGroup";
+
+/* Class = "UITabBarItem"; title = "Друзья"; ObjectID = "so7-HT-lr0"; */
+"so7-HT-lr0.title" = "Друзья";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vb5-6s-vtk"; */
+"vb5-6s-vtk.text" = "Label";

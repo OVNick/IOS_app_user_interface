@@ -48,14 +48,14 @@ class FriendsInstances {
         [[2], [2, 3], [2, 3, 4], [2, 3, 4, 5]],
         [[2], [2, 3], [2, 3, 4], [2, 3, 4, 5], [2, 3, 4, 5, 6]],
         [[2], [2, 3], [2, 3, 4], [2, 3, 4, 5], [2, 3, 4, 5, 6]],
-        [[2], [2, 3], [2, 3, 4], [2, 3, 4, 5]],
+        [[2], [2, 3], [2, 3, 4], [2, 3, 4, 5]]
     ]
     
     var myFriends: [User] {
         get {
             var objects = [User]()
             for index in 1...userName.count {
-                objects.append(User.init(id: index-1, image: userPhoto[index-1][0], name: userName[index-1], photo: userPhoto[index-1], like: 0, ratingLike: userRatingLike[index-1]))
+                objects.append(User.init(id: index-1, image: userPhoto[index-1][0], name: userName[index-1], photo: userPhoto[index-1], ratingLike: userRatingLike[index-1]))
             }
             return objects
         }

@@ -10,10 +10,26 @@ import UIKit
 class MyGroupsController: UITableViewController {
     
     var objects = GroupsInstances()
-        
+    private var filteredGroups = [Group]()
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Поиск"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,22 +40,29 @@ class MyGroupsController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if isFiltering {
+            return filteredGroups.count
+        }
         return objects.myGroups.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as? MyGroupsCell else {
             preconditionFailure("Groupcell cannot")
         }
         
-        cell.imageGroupCell.image = objects.myGroups[indexPath.row].image
-        cell.labelGroupCell.text = objects.myGroups[indexPath.row].name
+        var groups = objects.myGroups
+        
+        if isFiltering {
+            groups = filteredGroups
+        }
+        
+        cell.imageGroupCell.image = groups[indexPath.row].image
+        cell.labelGroupCell.text = groups[indexPath.row].name
         
         return cell
     }
@@ -99,4 +122,19 @@ class MyGroupsController: UITableViewController {
     }
     */
 
+}
+
+extension MyGroupsController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        let groups = objects.myGroups
+        filteredGroups = groups.filter({ (group: Group)  in
+            return group.name.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+    }
 }

@@ -11,7 +11,7 @@ private let reuseIdentifier = "Cell"
 
 class AllPhotoController: UICollectionViewController {
     
-    var object: User = User(id: 0, image: UIImage.init(named: "name"), name: "image", photo: [], like: 0, ratingLike: [[]])
+    var object: User = User(id: 0, image: UIImage.init(named: "name"), name: "image", photo: [], ratingLike: [[]])
 
     override func viewDidLoad() {
         super.viewDidLoad()

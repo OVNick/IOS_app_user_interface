@@ -1,92 +1,64 @@
 //
-//  FriendsController.swift
+//  NewsController.swift
 //  newVK
 //
-//  Created by Николай Онучин on 23.02.2022.
+//  Created by Николай Онучин on 02.04.2022.
 //
 
 import UIKit
 
-class FriendsController: UITableViewController {
+class NewsController: UITableViewController {
     
-    var objects = FriendsInstances()
-    var sortedObjects = [Character: [User]]()
-    
+    var objects = NewsInstances()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.sortedObjects = sort(objects: objects.myFriends)
+        tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         
         // Uncomment the following line to preserve selection between presentations
-        //self.clearsSelectionOnViewWillAppear = false
+        // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-        
-    private func sort(objects: [User]) -> [Character: [User]] {
-        
-        var objectsDict = [Character: [User]]()
-        
-        objects.forEach() { object in
-            guard let firstChar = object.name.first else { return }
-            if var thisCharObjects = objectsDict[firstChar] {
-                thisCharObjects.append(object)
-                objectsDict[firstChar] = thisCharObjects
-            } else {
-                objectsDict[firstChar] = [object]
-            }
-        }
-        return objectsDict
-    }
+    
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return sortedObjects.keys.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let keySorted = sortedObjects.keys.sorted()
-        let objects = sortedObjects[keySorted[section]]?.count ?? 0
-        
-        return objects
+        return objects.myNews.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsCell", for: indexPath) as? FriendsCell else {
-            preconditionFailure("Friendscell cannot")
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as? NewsCell else {
+            preconditionFailure("Error")
         }
         
-        let firstChar = sortedObjects.keys.sorted()[indexPath.section]
-        let objects = sortedObjects[firstChar]!
-        let object: User = objects[indexPath.row]
+        cell.avatarImageView.image = objects.myNews[indexPath.row].avatar
+        cell.nameLabel.text = objects.myNews[indexPath.row].name
+        cell.dateLabel.text = objects.myNews[indexPath.row].date
+        cell.newsLabel.text = objects.myNews[indexPath.row].text
         
-        cell.imageFriendsCell.image = object.avatar
-        cell.labelFriendsCell.text = object.name
-
+        cell.likeControl.likeCounter = objects.myNews[indexPath.row].ratingLike.count
+        if cell.likeControl.likeCounter > 0 {
+            cell.likeControl.likeLabel.text = "\(objects.myNews[indexPath.row].ratingLike.count)"
+        } else {
+            cell.likeControl.likeLabel.text = ""
+        }
+        
+        cell.photo = objects.photo[indexPath.row]
+        
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        String(sortedObjects.keys.sorted()[section])
-    }
         
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "showAllPhoto",
-              let destinationVC = segue.destination as? AllPhotoController,
-              let indexPath = tableView.indexPathForSelectedRow else { return }
-        
-        let keys = Array(sortedObjects.keys.sorted())
-        let objectsInKey: [User]
-        
-        objectsInKey = sortedObjects[keys[indexPath.section]]!
-        
-        destinationVC.object = objectsInKey[indexPath.row]
-    }
-    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
