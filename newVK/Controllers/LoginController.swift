@@ -12,7 +12,16 @@ class LoginController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-
+    @IBOutlet var animationView: UIView!
+    @IBOutlet var animationCenterImage: UIImageView!
+    @IBOutlet var animationRightImage: UIImageView!
+    @IBOutlet var animationLeftImage: UIImageView!
+    @IBOutlet var entryButton: UIButton!
+    @IBOutlet var registrationButton: UIButton!
+    @IBOutlet var forgotButton: UIButton!
+    @IBOutlet var logoImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,7 +66,35 @@ class LoginController: UIViewController {
                   return
               }
         
-        performSegue(withIdentifier: "Login", sender: nil)
+        self.loginTextField.alpha = 0
+        self.passwordTextField.alpha = 0
+        self.entryButton.alpha = 0
+        self.forgotButton.alpha = 0
+        self.registrationButton.alpha = 0
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: [.repeat, .autoreverse]) {
+            self.animationLeftImage.tintColor = .white
+        }
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.1,
+                       options: [.repeat, .autoreverse]) {
+            self.animationCenterImage.tintColor = .white
+        }
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.2,
+                       options: [.repeat, .autoreverse]) {
+            self.animationRightImage.tintColor = .white
+        }
+        
+        UIView.animate(withDuration: 6,
+                       delay: 0.2) {
+            self.logoImage.alpha = 0
+        } completion: { _ in
+            self.performSegue(withIdentifier: "Login", sender: nil)
+        }
     }
-
 }
