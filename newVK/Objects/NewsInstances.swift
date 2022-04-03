@@ -11,32 +11,38 @@ class NewsInstances {
     
     var avatar: [UIImage?] = [
         UIImage.init(named: "Avengers.jpg"),
-        UIImage.init(named: "3_1.jpg")
+        UIImage.init(named: "3_1.jpg"),
+        UIImage.init(named: "1_1.jpg")
     ]
     
     var name: [String] = [
         "Подслушано Мстители",
-        "Роберт Дауни"
+        "Роберт Дауни",
+        "Тестовое имя"
     ]
     
     var date: [String] = [
         "02.04.2022",
-        "01.04.2022"
+        "01.04.2022",
+        "тест даты"
     ]
     
     let text: [String] = [
         "Совсем скоро в кино!",
-        "Тестирую новый костюм!"
+        "Тестирую новый костюм!",
+        "Новость бла-бла-бла"
     ]
     
     var photo: [[UIImage?]] = [
         [UIImage.init(named: "7_1.jpg"), UIImage.init(named: "3_4.jpg"), UIImage.init(named: "10_5.jpg")],
-        [UIImage.init(named: "3_3.jpg")]
+        [UIImage.init(named: "3_3.jpg")],
+        [UIImage.init(named: "1_1.jpg"), UIImage.init(named: "1_1.jpg"), UIImage.init(named: "1_1.jpg"), UIImage.init(named: "1_1.jpg")]
     ]
     
     var ratingLike: [[Int]] = [
         [2, 3, 4, 5, 6],
-        [1, 3, 4, 5]
+        [1, 3, 4, 5],
+        [2, 3, 4, 5, 6]
     ]
     
     var myNews: [News] {

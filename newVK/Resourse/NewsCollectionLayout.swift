@@ -10,7 +10,8 @@ import UIKit
 class NewsCollectionLayout: UICollectionViewLayout {
 
     var cacheAttributes = [IndexPath: UICollectionViewLayoutAttributes]()
-    var cellHeight: CGFloat = 128
+    var cellHeight: CGFloat = 0
+    var cellWidth: CGFloat = 0
     private var totalCellsHeight: CGFloat = 0
     
     override func prepare() {
@@ -23,6 +24,7 @@ class NewsCollectionLayout: UICollectionViewLayout {
                 
         var lastY: CGFloat = 0
         var lastX: CGFloat = 0
+        let frame: CGFloat = collectionView.frame.width
         
         for index in 0..<itemsCount {
             let indexPath = IndexPath(item: index, section: 0)
@@ -30,22 +32,48 @@ class NewsCollectionLayout: UICollectionViewLayout {
             
             switch itemsCount {
             case 1:
-                attributes.frame = CGRect(x: 0, y: 0, width: collectionView.frame.width, height: collectionView.frame.width)
-                lastY = collectionView.frame.width
+                cellWidth = frame
+                cellHeight = frame
+                totalCellsHeight = frame
+            case 2:
+                cellWidth = frame/2
+                cellHeight = frame/2
+                if index == 1 {
+                    lastX = frame/2
+                    totalCellsHeight = frame/2
+                }
+            case 3:
+                cellHeight = frame/2
+                if index == 0 {
+                    cellWidth = frame
+                } else if index == 1 {
+                    cellWidth = frame/2
+                    lastY = frame/2
+                } else {
+                    lastX = frame/2
+                    totalCellsHeight = frame
+                }
             default:
-                if index < 2 {
-                    attributes.frame = CGRect(x: lastX, y: lastY, width: collectionView.frame.width/2, height: collectionView.frame.width/2)
-                    lastX += (collectionView.frame.width/2)
-                } else if index == 2 {
-                    lastX = 0
-                    lastY = collectionView.frame.width/2
-                    attributes.frame = CGRect(x: lastX, y: lastY, width: collectionView.frame.width, height: collectionView.frame.width/2)
-                    lastY = collectionView.frame.width
+                if index < 4 {
+                    cellWidth = frame/2
+                    cellHeight = frame/2
+                    if index == 1 {
+                        lastX = frame/2
+                    } else if index == 2 {
+                        lastX = 0
+                        lastY = frame/2
+                    } else if index == 3 {
+                        lastX = frame/2
+                        totalCellsHeight = frame
+                    }
                 }
             }
+            
+            attributes.frame = CGRect(x: lastX, y: lastY, width: cellWidth, height: cellHeight)
+            
             cacheAttributes[indexPath] = attributes
         }
-        totalCellsHeight = lastY
+        //totalCellsHeight = lastY
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
