@@ -143,6 +143,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dfA-tR-yg4" secondAttribute="trailing" id="zSf-R7-pea"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="357-Rp-DzU"/>
                     <connections>
                         <outlet property="loginTextField" destination="nXR-Qe-NSc" id="yLi-u5-KMZ"/>
                         <outlet property="passwordTextField" destination="ALh-Eb-gKD" id="sE2-vN-1Ho"/>
@@ -440,7 +441,14 @@
                             <outlet property="delegate" destination="96O-tu-lUo" id="Yb4-SN-zVk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Друзья" id="VLq-Nz-qH8"/>
+                    <navigationItem key="navigationItem" title="Друзья" id="VLq-Nz-qH8">
+                        <barButtonItem key="leftBarButtonItem" title="Выход" style="done" id="c4a-dw-Ual">
+                            <connections>
+                                <action selector="tapButtonExit:" destination="96O-tu-lUo" id="kkJ-iU-ykh"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="exit" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="W8O-h4-G8D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5v-4M-U76" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
