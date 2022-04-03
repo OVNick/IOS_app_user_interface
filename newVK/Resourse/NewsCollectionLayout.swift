@@ -73,7 +73,6 @@ class NewsCollectionLayout: UICollectionViewLayout {
             
             cacheAttributes[indexPath] = attributes
         }
-        //totalCellsHeight = lastY
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

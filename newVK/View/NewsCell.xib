@@ -10,21 +10,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="725" id="KGk-i7-Jjw" customClass="NewsCell" customModule="newVK" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="536" height="725"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="666" id="KGk-i7-Jjw" customClass="NewsCell" customModule="newVK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="581" height="666"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="536" height="725"/>
+                <rect key="frame" x="0.0" y="0.0" width="581" height="666"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6M-77-qjk">
-                        <rect key="frame" x="92" y="8" width="436" height="20.5"/>
+                        <rect key="frame" x="130.5" y="8" width="392" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bo-93-wOv" customClass="AvatarView" customModule="newVK" customModuleProvider="target">
-                        <rect key="frame" x="28" y="8" width="48" height="48"/>
+                        <rect key="frame" x="66.5" y="8" width="48" height="48"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Gd-7Q-YOC" userLabel="Shadow View">
                                 <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -53,22 +53,23 @@
                         </connections>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fq0-2q-aA2">
-                        <rect key="frame" x="92" y="39" width="444" height="17"/>
+                        <rect key="frame" x="130.5" y="39" width="392" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст новости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3t-22-h4j">
-                        <rect key="frame" x="28" y="72" width="480" height="101"/>
+                        <rect key="frame" x="66.5" y="72" width="448" height="74"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="h7P-w9-116">
-                        <rect key="frame" x="20" y="189" width="496" height="496"/>
+                        <rect key="frame" x="58.5" y="162" width="464" height="464"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="h7P-w9-116" secondAttribute="height" multiplier="1:1" id="IoW-vt-Idh"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="IuJ-qF-Fxl"/>
+                            <constraint firstAttribute="width" secondItem="h7P-w9-116" secondAttribute="height" multiplier="1:1" id="VEI-ct-nYU"/>
                         </constraints>
                         <collectionViewLayout key="collectionViewLayout" id="JAR-OJ-ceJ" customClass="NewsCollectionLayout" customModule="newVK" customModuleProvider="target"/>
                         <connections>
@@ -77,10 +78,10 @@
                         </connections>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnt-qz-PMI" userLabel="PhotoRatingView" customClass="PhotoRatingView" customModule="newVK" customModuleProvider="target">
-                        <rect key="frame" x="20" y="677" width="496" height="48"/>
+                        <rect key="frame" x="58.5" y="618" width="464" height="48"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9v-RS-q8N" customClass="LikeControl" customModule="newVK" customModuleProvider="target">
-                                <rect key="frame" x="48" y="8" width="80" height="32"/>
+                                <rect key="frame" x="32" y="8" width="80" height="32"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kfZ-UN-jnM" userLabel="Container">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="32"/>
@@ -135,9 +136,9 @@
                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                 <constraints>
                     <constraint firstItem="j3t-22-h4j" firstAttribute="top" secondItem="9bo-93-wOv" secondAttribute="bottom" constant="16" id="1GM-t1-yTD"/>
-                    <constraint firstItem="9bo-93-wOv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="1aS-8K-Kyl"/>
-                    <constraint firstAttribute="trailing" secondItem="fq0-2q-aA2" secondAttribute="trailing" id="3bk-5u-PCq"/>
-                    <constraint firstAttribute="trailing" secondItem="U6M-77-qjk" secondAttribute="trailing" constant="8" id="5so-HX-UqQ"/>
+                    <constraint firstItem="9bo-93-wOv" firstAttribute="leading" secondItem="h7P-w9-116" secondAttribute="leadingMargin" id="1aS-8K-Kyl"/>
+                    <constraint firstItem="h7P-w9-116" firstAttribute="trailing" secondItem="fq0-2q-aA2" secondAttribute="trailing" id="3bk-5u-PCq"/>
+                    <constraint firstItem="h7P-w9-116" firstAttribute="trailing" secondItem="U6M-77-qjk" secondAttribute="trailing" id="5so-HX-UqQ"/>
                     <constraint firstItem="h7P-w9-116" firstAttribute="trailing" secondItem="pnt-qz-PMI" secondAttribute="trailing" id="7l7-95-9KQ"/>
                     <constraint firstItem="pnt-qz-PMI" firstAttribute="topMargin" secondItem="h7P-w9-116" secondAttribute="bottom" id="BEi-4i-mAH"/>
                     <constraint firstItem="fq0-2q-aA2" firstAttribute="bottom" secondItem="9bo-93-wOv" secondAttribute="bottom" id="Bnu-VQ-XaX"/>
@@ -146,12 +147,13 @@
                     <constraint firstItem="9bo-93-wOv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="M06-4a-Nec"/>
                     <constraint firstItem="pnt-qz-PMI" firstAttribute="leading" secondItem="h7P-w9-116" secondAttribute="leading" id="OlP-nA-gnl"/>
                     <constraint firstItem="fq0-2q-aA2" firstAttribute="leading" secondItem="9bo-93-wOv" secondAttribute="trailing" constant="16" id="R16-hf-euL"/>
-                    <constraint firstItem="j3t-22-h4j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="Rks-gF-2Ei"/>
-                    <constraint firstItem="h7P-w9-116" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dBV-5c-7aT"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="h7P-w9-116" secondAttribute="trailing" id="hfO-zg-hJY"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="j3t-22-h4j" secondAttribute="trailing" constant="8" id="nCM-Cg-3eO"/>
+                    <constraint firstItem="j3t-22-h4j" firstAttribute="leading" secondItem="h7P-w9-116" secondAttribute="leadingMargin" id="Rks-gF-2Ei"/>
+                    <constraint firstItem="h7P-w9-116" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="dBV-5c-7aT"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="h7P-w9-116" secondAttribute="trailing" constant="2" id="hfO-zg-hJY"/>
+                    <constraint firstItem="h7P-w9-116" firstAttribute="trailingMargin" secondItem="j3t-22-h4j" secondAttribute="trailing" id="nCM-Cg-3eO"/>
                     <constraint firstItem="U6M-77-qjk" firstAttribute="leading" secondItem="9bo-93-wOv" secondAttribute="trailing" constant="16" id="qrp-9T-IOH"/>
                     <constraint firstItem="U6M-77-qjk" firstAttribute="top" secondItem="9bo-93-wOv" secondAttribute="top" id="w7c-qK-Cg3"/>
+                    <constraint firstItem="h7P-w9-116" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wT1-Xu-nzY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -164,7 +166,7 @@
                 <outlet property="newsCollectionView" destination="h7P-w9-116" id="m2p-4B-eAc"/>
                 <outlet property="newsLabel" destination="j3t-22-h4j" id="Yg8-Xz-z4z"/>
             </connections>
-            <point key="canvasLocation" x="959.4202898550725" y="83.370535714285708"/>
+            <point key="canvasLocation" x="1525.3623188405797" y="-86.383928571428569"/>
         </tableViewCell>
     </objects>
     <resources>

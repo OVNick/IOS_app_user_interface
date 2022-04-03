@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewsController: UITableViewController, UICollectionViewDelegate {
+class NewsController: UITableViewController {
     
     var objects = NewsInstances()
 
@@ -23,7 +23,7 @@ class NewsController: UITableViewController, UICollectionViewDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -23,7 +23,7 @@ class FriendsController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+        
     private func sort(objects: [User]) -> [Character: [User]] {
         
         var objectsDict = [Character: [User]]()

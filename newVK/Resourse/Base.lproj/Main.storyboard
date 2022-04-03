@@ -503,16 +503,16 @@
         <!--Photo Controller-->
         <scene sceneID="32Y-Pu-93B">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="TDR-bP-j2k" customClass="PhotoController" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" interfaceStyle="dark" id="TDR-bP-j2k" customClass="PhotoController" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dho-7L-ADj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MOl-dS-nTV">
-                                <rect key="frame" x="0.0" y="89" width="414" height="723.5"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="674.5"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyF-C0-rlW" customClass="PhotoRatingView" customModule="newVK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="814" width="414" height="48"/>
+                                <rect key="frame" x="0.0" y="765" width="414" height="48"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqs-rI-JfJ" customClass="LikeControl" customModule="newVK" customModuleProvider="target">
                                         <rect key="frame" x="32" y="8" width="80" height="32"/>
