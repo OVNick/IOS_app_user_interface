@@ -12,7 +12,7 @@ class PhotoController: UIViewController {
     @IBOutlet var userPhoto: UIImageView!
     @IBOutlet var likeControl: LikeControl!
     
-    var object: User = User(id: 0, image: UIImage.init(named: "name"), name: "image", photo: [], like: 0, ratingLike: [[]])
+    var object: User = User(id: 0, image: UIImage.init(named: "name"), name: "image", photo: [], ratingLike: [[]])
     var index: Int = 0
     
     override func viewDidLoad() {

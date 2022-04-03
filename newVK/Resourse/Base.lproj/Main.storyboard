@@ -167,6 +167,7 @@
                     <connections>
                         <segue destination="RV4-IZ-lmD" kind="relationship" relationship="viewControllers" id="h1T-WA-P6y"/>
                         <segue destination="6dd-ba-adM" kind="relationship" relationship="viewControllers" id="Ng8-vF-PaE"/>
+                        <segue destination="tXi-QJ-EBj" kind="relationship" relationship="viewControllers" id="pZL-N5-vvz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOc-80-XdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -260,6 +261,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4b-Zb-Cyx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2615.9420289855075" y="468.75"/>
+        </scene>
+        <!--Новости-->
+        <scene sceneID="ScS-T4-d4x">
+            <objects>
+                <tableViewController id="mo8-qr-q4W" customClass="NewsController" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="gfR-HJ-GSh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="sectionIndexBackgroundColor" systemColor="systemGray5Color"/>
+                        <connections>
+                            <outlet property="dataSource" destination="mo8-qr-q4W" id="kqu-UG-DdG"/>
+                            <outlet property="delegate" destination="mo8-qr-q4W" id="G6x-bl-nDc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Новости" id="9C8-m3-mrC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxM-j9-p0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2616" y="1189"/>
         </scene>
         <!--Добавить-->
         <scene sceneID="vPe-E9-eZT">
@@ -607,9 +628,29 @@
             </objects>
             <point key="canvasLocation" x="1705.7971014492755" y="468.75"/>
         </scene>
+        <!--Новости-->
+        <scene sceneID="kwS-If-v7T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tXi-QJ-EBj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новости" image="note" catalog="system" id="uFs-Bx-SfP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QAa-fe-XpQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mo8-qr-q4W" kind="relationship" relationship="rootViewController" id="kbR-dZ-6If"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uyX-yy-37j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1706" y="1189"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo" width="341" height="341"/>
+        <image name="note" catalog="system" width="128" height="106"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
