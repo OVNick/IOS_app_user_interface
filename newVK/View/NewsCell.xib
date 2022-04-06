@@ -30,25 +30,37 @@
                                 <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="y1e-2E-uNS" userLabel="Avatar Image View">
-                                <rect key="frame" x="0.0" y="1.5" width="48" height="45"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edD-IS-jDc">
+                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="y1e-2E-uNS" userLabel="Avatar Image View">
+                                        <rect key="frame" x="0.0" y="1.5" width="48" height="45"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="y1e-2E-uNS" firstAttribute="leading" secondItem="edD-IS-jDc" secondAttribute="leading" id="2Cq-e5-wBi"/>
+                                    <constraint firstItem="y1e-2E-uNS" firstAttribute="top" secondItem="edD-IS-jDc" secondAttribute="top" id="W8D-Hu-nZA"/>
+                                    <constraint firstAttribute="trailing" secondItem="y1e-2E-uNS" secondAttribute="trailing" id="kd8-v8-ZVL"/>
+                                    <constraint firstAttribute="bottom" secondItem="y1e-2E-uNS" secondAttribute="bottom" id="q9V-fH-wo6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="9Gd-7Q-YOC" secondAttribute="bottom" id="BIh-KQ-51h"/>
+                            <constraint firstAttribute="bottom" secondItem="edD-IS-jDc" secondAttribute="bottom" id="CAe-EQ-cj7"/>
                             <constraint firstItem="9Gd-7Q-YOC" firstAttribute="leading" secondItem="9bo-93-wOv" secondAttribute="leading" id="F2H-Bc-PpL"/>
                             <constraint firstAttribute="width" secondItem="9bo-93-wOv" secondAttribute="height" multiplier="1:1" id="N0z-FQ-L7V"/>
-                            <constraint firstItem="y1e-2E-uNS" firstAttribute="top" secondItem="9bo-93-wOv" secondAttribute="top" id="Rsq-2w-kf0"/>
-                            <constraint firstAttribute="trailing" secondItem="y1e-2E-uNS" secondAttribute="trailing" id="XPO-dh-Q11"/>
+                            <constraint firstAttribute="trailing" secondItem="edD-IS-jDc" secondAttribute="trailing" id="NIy-ME-Wbn"/>
+                            <constraint firstItem="edD-IS-jDc" firstAttribute="leading" secondItem="9bo-93-wOv" secondAttribute="leading" id="Sah-3f-yK0"/>
                             <constraint firstAttribute="trailing" secondItem="9Gd-7Q-YOC" secondAttribute="trailing" id="ZGn-45-pfA"/>
                             <constraint firstItem="9Gd-7Q-YOC" firstAttribute="top" secondItem="9bo-93-wOv" secondAttribute="top" id="d2i-aC-PJN"/>
-                            <constraint firstAttribute="bottom" secondItem="y1e-2E-uNS" secondAttribute="bottom" id="ePg-Sg-fEr"/>
                             <constraint firstAttribute="height" constant="48" id="rFS-0c-mNY"/>
-                            <constraint firstItem="y1e-2E-uNS" firstAttribute="leading" secondItem="9bo-93-wOv" secondAttribute="leading" id="snx-hW-S79"/>
+                            <constraint firstItem="edD-IS-jDc" firstAttribute="top" secondItem="9bo-93-wOv" secondAttribute="top" id="whV-qa-NX0"/>
                         </constraints>
                         <connections>
                             <outlet property="avatarImageView" destination="y1e-2E-uNS" id="IbM-bh-E80"/>
+                            <outlet property="frameOfAvatar" destination="edD-IS-jDc" id="zUN-O1-VTl"/>
                             <outlet property="shadowView" destination="9Gd-7Q-YOC" id="CTI-Ue-vf6"/>
                         </connections>
                     </view>
