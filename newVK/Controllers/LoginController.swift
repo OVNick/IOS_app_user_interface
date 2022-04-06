@@ -90,7 +90,7 @@ class LoginController: UIViewController {
             self.animationRightImage.tintColor = .white
         }
         
-        UIView.animate(withDuration: 6,
+        UIView.animate(withDuration: 2,
                        delay: 0.2) {
             self.logoImage.alpha = 0
         } completion: { _ in

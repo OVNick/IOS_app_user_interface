@@ -9,6 +9,8 @@ import UIKit
 
 class FriendsController: UITableViewController {
     
+    @IBOutlet var avatarView: AvatarView!
+    
     var objects = FriendsInstances()
     var sortedObjects = [Character: [User]]()
     
