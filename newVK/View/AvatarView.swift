@@ -40,8 +40,7 @@ class AvatarView: UIView {
                        usingSpringWithDamping: 0.05,
                        initialSpringVelocity: 1,
                        options: .curveEaseInOut) {
-            self.frameOfAvatar.transform = self.frameOfAvatar.transform.scaledBy(x: 1.2, y: 1.2)
-            self.shadowView.transform = self.shadowView.transform.scaledBy(x: 1.2, y: 1.2)
+            self.frameOfAvatar.transform = .identity
         }
     }
 }

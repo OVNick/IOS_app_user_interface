@@ -22,11 +22,20 @@ class PhotoRatingView: UIView {
         likeControl.isLike.toggle()
         
         if likeControl.isLike {
+            
             likeControl.likePicture.tintColor = .red
             likeControl.likePicture.image = UIImage(systemName: "suit.heart.fill")
-            
             likeControl.likeLabel.textColor = .red
             likeControl.likeLabel.text = "\(likeControl.likeCounter + 1)"
+            
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           usingSpringWithDamping: 0.06,
+                           initialSpringVelocity: 1) {
+                self.likeControl.transform = self.likeControl.transform.scaledBy(x: 1.2, y: 1.2)
+            }
+            self.likeControl.transform = .identity
+            
         } else {
             likeControl.likePicture.tintColor = .lightGray
             likeControl.likePicture.image = UIImage(systemName: "suit.heart")
