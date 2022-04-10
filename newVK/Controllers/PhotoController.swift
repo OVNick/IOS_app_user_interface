@@ -96,41 +96,56 @@ class PhotoController: UIViewController {
             }
             
         case .ended:
+            
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) {
+                
+            }
 
             if index < nextIndex {
                 if percent < 0.5 {
-                    imageViewTwo.transform = .identity
-                    imageViewOne.transform = .identity
-                    imageViewOne.alpha = 1
-                    imageViewOne.image = object.photo[nextIndex]
-                    imageViewTwo.image = nil
-                    imageViewTwo.backgroundColor = nil
+                    UIView.animate(withDuration: 0.16, delay: 0, options: .curveEaseOut) { [self] in
+                        imageViewTwo.transform = .identity
+                    } completion: { [self] _ in
+                        imageViewOne.transform = .identity
+                        imageViewOne.alpha = 1
+                        imageViewOne.image = object.photo[nextIndex]
+                        imageViewTwo.image = nil
+                        imageViewTwo.backgroundColor = nil
+                    }
                     setRating()
                     setNumberOfPhoto()
                     index = nextIndex
+                
                 } else {
-                    imageViewTwo.transform = .identity
-                    imageViewTwo.transform = imageViewTwo.transform.translatedBy(x: view.frame.width, y: 0)
-                    imageViewOne.transform = .identity
-                    imageViewOne.alpha = 1
+                    UIView.animate(withDuration: 0.16, delay: 0, options: .curveEaseOut) { [self] in
+                        imageViewTwo.transform = imageViewTwo.transform.translatedBy(x: view.frame.width, y: 0)
+                        imageViewOne.transform = .identity
+                        imageViewOne.alpha = 1
+                    }
                 }
                 
             } else if index > nextIndex {
                 if percent < 0.5 {
-                    imageViewTwo.transform = .identity
-                    imageViewTwo.transform = imageViewTwo.transform.translatedBy(x: view.frame.width, y: 0)
-                    imageViewOne.transform = .identity
-                    imageViewOne.alpha = 1
-                    imageViewOne.image = object.photo[nextIndex]
+                    UIView.animate(withDuration: 0.16, delay: 0, options: .curveEaseOut) { [self] in
+                        imageViewTwo.transform = imageViewTwo.transform.translatedBy(x: view.frame.width, y: 0)
+                        imageViewOne.transform = .identity
+                        imageViewOne.alpha = 1
+                        //imageViewOne.image = object.photo[nextIndex]
+                    }
                     setRating()
                     setNumberOfPhoto()
                     index = nextIndex
+                 
                 } else {
-                    imageViewTwo.transform = .identity
+                    UIView.animate(withDuration: 0.16, delay: 0, options: .curveEaseOut) { [self] in
+                        imageViewTwo.transform = .identity
+                    }
                 }
                 
             } else {
-                imageViewTwo.transform = .identity
+                UIView.animate(withDuration: 0.16, delay: 0, options: .curveEaseOut) { [self] in
+                    imageViewTwo.transform = .identity
+                }
             }
 
         default:

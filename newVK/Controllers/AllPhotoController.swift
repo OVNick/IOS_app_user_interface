@@ -16,6 +16,10 @@ class AllPhotoController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        self.navigationItem.backBarButtonItem = backItem
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -36,6 +40,7 @@ class AllPhotoController: UICollectionViewController {
             destinationVC.index = indexPath.row
         }
     }
+        
     
     // MARK: UICollectionViewDataSource
 

@@ -19,6 +19,10 @@ class FriendsController: UITableViewController {
 
         self.sortedObjects = sort(objects: objects.myFriends)
         
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        self.navigationItem.backBarButtonItem = backItem
+        
         // Uncomment the following line to preserve selection between presentations
         //self.clearsSelectionOnViewWillAppear = false
 
