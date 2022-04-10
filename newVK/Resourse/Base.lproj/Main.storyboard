@@ -321,7 +321,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4b-Zb-Cyx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2615.9420289855075" y="468.75"/>
+            <point key="canvasLocation" x="2616" y="124"/>
         </scene>
         <!--Новости-->
         <scene sceneID="ScS-T4-d4x">
@@ -341,7 +341,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxM-j9-p0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2616" y="1189"/>
+            <point key="canvasLocation" x="2616" y="850"/>
         </scene>
         <!--Добавить-->
         <scene sceneID="vPe-E9-eZT">
@@ -435,7 +435,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3j2-zp-Tm7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="jaN-0d-djN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3537.68115942029" y="468.75"/>
+            <point key="canvasLocation" x="3538" y="124"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="og6-Tb-SbR">
@@ -536,7 +536,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5v-4M-U76" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2615.9420289855075" y="-234.375"/>
+            <point key="canvasLocation" x="2616" y="-602"/>
         </scene>
         <!--Фото-->
         <scene sceneID="Wqg-le-evm">
@@ -590,9 +590,9 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8j-09-j3h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3538" y="-234"/>
+            <point key="canvasLocation" x="3538" y="-602"/>
         </scene>
-        <!--Photo Controller-->
+        <!--1-->
         <scene sceneID="32Y-Pu-93B">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" interfaceStyle="dark" id="TDR-bP-j2k" customClass="PhotoController" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
@@ -600,9 +600,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MOl-dS-nTV">
-                                <rect key="frame" x="0.0" y="89" width="414" height="674.5"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyF-C0-rlW" customClass="PhotoRatingView" customModule="newVK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="765" width="414" height="48"/>
                                 <subviews>
@@ -663,24 +660,21 @@
                         <viewLayoutGuide key="safeArea" id="cn5-gf-Pd7"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="QyF-C0-rlW" firstAttribute="bottom" secondItem="MOl-dS-nTV" secondAttribute="bottom" constant="48" id="E2l-E7-cbR"/>
-                            <constraint firstItem="cn5-gf-Pd7" firstAttribute="trailing" secondItem="MOl-dS-nTV" secondAttribute="trailing" id="NcN-Gz-lMy"/>
-                            <constraint firstItem="MOl-dS-nTV" firstAttribute="top" secondItem="cn5-gf-Pd7" secondAttribute="top" id="SZl-MV-nHJ"/>
                             <constraint firstItem="cn5-gf-Pd7" firstAttribute="trailing" secondItem="QyF-C0-rlW" secondAttribute="trailing" id="kZJ-e7-ONs"/>
                             <constraint firstItem="QyF-C0-rlW" firstAttribute="leading" secondItem="cn5-gf-Pd7" secondAttribute="leading" id="wkX-H5-ErU"/>
                             <constraint firstItem="cn5-gf-Pd7" firstAttribute="bottom" secondItem="QyF-C0-rlW" secondAttribute="bottom" id="x3o-5V-dhS"/>
-                            <constraint firstItem="MOl-dS-nTV" firstAttribute="leading" secondItem="cn5-gf-Pd7" secondAttribute="leading" id="yrf-wI-d0W"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fAb-Uw-x31"/>
+                    <navigationItem key="navigationItem" title="1" id="fAb-Uw-x31"/>
                     <connections>
                         <outlet property="likeControl" destination="vqs-rI-JfJ" id="lAn-1c-gbO"/>
-                        <outlet property="userPhoto" destination="MOl-dS-nTV" id="gfU-kQ-SEi"/>
+                        <outlet property="photoNavigation" destination="fAb-Uw-x31" id="YSm-Sm-1PD"/>
+                        <outlet property="photoRatingView" destination="QyF-C0-rlW" id="6h9-VT-YPc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edQ-Se-Vvo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4438" y="-235"/>
+            <point key="canvasLocation" x="4432" y="-602"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="WZM-1E-RGI">
@@ -699,7 +693,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXo-pd-Jzs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1705.7971014492755" y="-234.375"/>
+            <point key="canvasLocation" x="1706" y="-602"/>
         </scene>
         <!--Группы-->
         <scene sceneID="y5T-G2-NFt">
@@ -718,7 +712,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2k5-NV-OU8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1705.7971014492755" y="468.75"/>
+            <point key="canvasLocation" x="1706" y="124"/>
         </scene>
         <!--Новости-->
         <scene sceneID="kwS-If-v7T">
@@ -737,7 +731,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyX-yy-37j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="1189"/>
+            <point key="canvasLocation" x="1706" y="851"/>
         </scene>
     </scenes>
     <resources>
