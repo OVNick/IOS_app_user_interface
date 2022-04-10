@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A873567828034C7900F7B376 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873567728034C7900F7B376 /* CustomNavigationController.swift */; };
 		A87A720D27B6C9E8003FAF66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A720C27B6C9E8003FAF66 /* AppDelegate.swift */; };
 		A87A720F27B6C9E8003FAF66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A720E27B6C9E8003FAF66 /* SceneDelegate.swift */; };
 		A87A721127B6C9E8003FAF66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A721027B6C9E8003FAF66 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		A882BF8727C67A2200F6ED8F /* MyGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A882BF8627C67A2200F6ED8F /* MyGroupsCell.swift */; };
 		A882BF8927C67D7500F6ED8F /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A882BF8827C67D7500F6ED8F /* Group.swift */; };
 		A882BF8B27C6837300F6ED8F /* AllGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A882BF8A27C6837300F6ED8F /* AllGroupsCell.swift */; };
+		A8844B662803437900199551 /* CustomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8844B652803437900199551 /* CustomAnimator.swift */; };
 		A8AD23DF27F8B0C200110D06 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AD23DD27F8B0C200110D06 /* NewsCell.swift */; };
 		A8AD23E027F8B0C200110D06 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AD23DE27F8B0C200110D06 /* NewsCell.xib */; };
 		A8AD23E227F8C00800110D06 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AD23E127F8C00800110D06 /* News.swift */; };
@@ -44,6 +46,7 @@
 /* Begin PBXFileReference section */
 		A839D32527F38E2D009C29F4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A839D32627F38E2E009C29F4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A873567728034C7900F7B376 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		A87A720927B6C9E8003FAF66 /* newVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87A720C27B6C9E8003FAF66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87A720E27B6C9E8003FAF66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		A882BF8627C67A2200F6ED8F /* MyGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsCell.swift; sourceTree = "<group>"; };
 		A882BF8827C67D7500F6ED8F /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		A882BF8A27C6837300F6ED8F /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
+		A8844B652803437900199551 /* CustomAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimator.swift; sourceTree = "<group>"; };
 		A8AD23DD27F8B0C200110D06 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		A8AD23DE27F8B0C200110D06 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		A8AD23E127F8C00800110D06 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				A8F73EDA27C3D2C500AA198B /* UIViewController + Extension.swift */,
+				A8844B652803437900199551 /* CustomAnimator.swift */,
+				A873567728034C7900F7B376 /* CustomNavigationController.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				A8F99A2927CC2CDE001B0AB3 /* LikeControl.swift in Sources */,
 				A882BF7427C6308400F6ED8F /* FriendsController.swift in Sources */,
 				A8F73EDB27C3D2C500AA198B /* UIViewController + Extension.swift in Sources */,
+				A873567828034C7900F7B376 /* CustomNavigationController.swift in Sources */,
 				A8E4620A27CAB05400F4A103 /* FriendsInstances.swift in Sources */,
 				A882BF7A27C6520D00F6ED8F /* AllPhotoController.swift in Sources */,
 				A882BF8527C678F900F6ED8F /* AllGroupsController.swift in Sources */,
@@ -286,6 +293,7 @@
 				A8E856F727F8D24800C0A5FD /* PhotoNewsCell.swift in Sources */,
 				A8B32CE327D54F1400A1B011 /* PhotoController.swift in Sources */,
 				A882BF8B27C6837300F6ED8F /* AllGroupsCell.swift in Sources */,
+				A8844B662803437900199551 /* CustomAnimator.swift in Sources */,
 				A882BF8927C67D7500F6ED8F /* Group.swift in Sources */,
 				A8E4620D27CAB31C00F4A103 /* GroupsInstances.swift in Sources */,
 				A882BF8727C67A2200F6ED8F /* MyGroupsCell.swift in Sources */,

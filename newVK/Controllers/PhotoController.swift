@@ -8,14 +8,12 @@
 import UIKit
 
 class PhotoController: UIViewController {
-
     @IBOutlet var photoNavigation: UINavigationItem!
     @IBOutlet var photoRatingView: PhotoRatingView!
     @IBOutlet var likeControl: LikeControl!
     
     var imageViewOne: UIImageView!
     var imageViewTwo: UIImageView!
-    
     var object: User = User(id: 0, image: UIImage.init(named: "name"), name: "image", photo: [], ratingLike: [[]])
     var index: Int = 0
     var nextIndex: Int = 0
@@ -50,13 +48,10 @@ class PhotoController: UIViewController {
     }
     
     @objc func viewPanned(_ recognizer: UIPanGestureRecognizer) {
-        
         let percent = 1 - abs(recognizer.translation(in: view).x / view.frame.width)
        
         switch recognizer.state {
-            
         case .changed:
-            
             if recognizer.translation(in: view).x < 0 {
                 index < object.photo.count-1 ? (self.nextIndex = index + 1) : (self.nextIndex = index)
             } else {
@@ -69,70 +64,77 @@ class PhotoController: UIViewController {
                 imageViewTwo.transform = CGAffineTransform(translationX: view.frame.width + recognizer.translation(in: view).x, y: 0.0)
                 
                 imageViewOne.image = object.photo[index]
+                
                 if percent > 0.8 {
                     imageViewOne.transform = CGAffineTransform(scaleX: percent, y: percent)
                 }
-                imageViewOne.alpha = percent
                 
+                imageViewOne.alpha = percent
             } else if index > nextIndex {
                 imageViewTwo.image = object.photo[index]
                 imageViewTwo.backgroundColor = UIColor.systemGray5
                 imageViewTwo.transform = CGAffineTransform(translationX: recognizer.translation(in: view).x, y: 0.0)
                 
                 imageViewOne.image = object.photo[nextIndex]
+                
                 if percent > 0.5 {
                     imageViewOne.transform = CGAffineTransform(scaleX: 1.5-percent, y: 1.5-percent)
                 }
-                imageViewOne.alpha = 1-percent
                 
+                imageViewOne.alpha = 1-percent
             } else {
                 imageViewTwo.image = object.photo[index]
                 imageViewTwo.backgroundColor = UIColor.systemGray5
+                
                 if percent > 0.8 {
                     imageViewTwo.transform = CGAffineTransform(translationX: recognizer.translation(in: view).x, y: 0.0)
                 }
                 
                 imageViewOne.image = nil
             }
-            
         case .ended:
-
             if index < nextIndex {
                 if percent < 0.5 {
-                    imageViewTwo.transform = .identity
-                    imageViewOne.transform = .identity
-                    imageViewOne.alpha = 1
-                    imageViewOne.image = object.photo[nextIndex]
-                    imageViewTwo.image = nil
-                    imageViewTwo.backgroundColor = nil
+                    UIView.animate(withDuration: 0.16, delay: 0, options: .curveEaseOut) { [self] in
+                        imageViewTwo.transform = .identity
+                    } completion: { [self] _ in
+                        imageViewOne.transform = .identity
+                        imageViewOne.alpha = 1
+                        imageViewOne.image = object.photo[nextIndex]
+                        imageViewTwo.image = nil
+                        imageViewTwo.backgroundColor = nil
+                    }
                     setRating()
                     setNumberOfPhoto()
+                    
                     index = nextIndex
                 } else {
-                    imageViewTwo.transform = .identity
-                    imageViewTwo.transform = imageViewTwo.transform.translatedBy(x: view.frame.width, y: 0)
-                    imageViewOne.transform = .identity
-                    imageViewOne.alpha = 1
+                    UIView.animate(withDuration: 0.16, delay: 0, options: .curveEaseOut) { [self] in
+                        imageViewTwo.transform = imageViewTwo.transform.translatedBy(x: view.frame.width, y: 0)
+                        imageViewOne.transform = .identity
+                        imageViewOne.alpha = 1
+                    }
                 }
-                
             } else if index > nextIndex {
                 if percent < 0.5 {
-                    imageViewTwo.transform = .identity
-                    imageViewTwo.transform = imageViewTwo.transform.translatedBy(x: view.frame.width, y: 0)
-                    imageViewOne.transform = .identity
-                    imageViewOne.alpha = 1
-                    imageViewOne.image = object.photo[nextIndex]
+                    UIView.animate(withDuration: 0.16, delay: 0, options: .curveEaseOut) { [self] in
+                        imageViewTwo.transform = imageViewTwo.transform.translatedBy(x: view.frame.width, y: 0)
+                        imageViewOne.transform = .identity
+                        imageViewOne.alpha = 1
+                    }
                     setRating()
                     setNumberOfPhoto()
                     index = nextIndex
                 } else {
+                    UIView.animate(withDuration: 0.16, delay: 0, options: .curveEaseOut) { [self] in
+                        imageViewTwo.transform = .identity
+                    }
+                }
+            } else {
+                UIView.animate(withDuration: 0.16, delay: 0, options: .curveEaseOut) { [self] in
                     imageViewTwo.transform = .identity
                 }
-                
-            } else {
-                imageViewTwo.transform = .identity
             }
-
         default:
             break
         }
@@ -164,9 +166,7 @@ class PhotoController: UIViewController {
     }
     
     func createPhotoViewConstraints() {
-        
         // Creating constraints for imageViewOne
-        
         let pinLeftImageViewOne = NSLayoutConstraint(item: imageViewOne!,
                                                   attribute: NSLayoutConstraint.Attribute.left,
                                                   relatedBy: NSLayoutConstraint.Relation.equal,
@@ -197,7 +197,6 @@ class PhotoController: UIViewController {
                                                   constant: -48)
 
         // Creating constraints for imageViewTwo
-        
         let pinLeftImageViewTwo = NSLayoutConstraint(item: imageViewTwo!,
                                                   attribute: NSLayoutConstraint.Attribute.left,
                                                   relatedBy: NSLayoutConstraint.Relation.equal,
