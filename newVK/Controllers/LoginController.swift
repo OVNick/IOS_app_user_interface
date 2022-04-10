@@ -72,7 +72,7 @@ class LoginController: UIViewController {
         self.forgotButton.alpha = 0
         self.registrationButton.alpha = 0
         
-        UIView.animate(withDuration: 0.5,
+        UIView.animate(withDuration: 0.1,
                        delay: 0,
                        options: [.repeat, .autoreverse]) {
             self.animationLeftImage.tintColor = .white

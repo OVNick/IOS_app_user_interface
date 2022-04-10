@@ -22,20 +22,14 @@ class FriendsController: UITableViewController {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         self.navigationItem.backBarButtonItem = backItem
-        
-        // Uncomment the following line to preserve selection between presentations
-        //self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
         
     private func sort(objects: [User]) -> [Character: [User]] {
-        
         var objectsDict = [Character: [User]]()
         
         objects.forEach() { object in
             guard let firstChar = object.name.first else { return }
+            
             if var thisCharObjects = objectsDict[firstChar] {
                 thisCharObjects.append(object)
                 objectsDict[firstChar] = thisCharObjects
@@ -47,14 +41,12 @@ class FriendsController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return sortedObjects.keys.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         let keySorted = sortedObjects.keys.sorted()
         let objects = sortedObjects[keySorted[section]]?.count ?? 0
         
