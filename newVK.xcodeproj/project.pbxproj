@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A83800AD280741760026E103 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83800AC280741760026E103 /* Session.swift */; };
 		A873567828034C7900F7B376 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873567728034C7900F7B376 /* CustomNavigationController.swift */; };
 		A87A720D27B6C9E8003FAF66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A720C27B6C9E8003FAF66 /* AppDelegate.swift */; };
 		A87A720F27B6C9E8003FAF66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A720E27B6C9E8003FAF66 /* SceneDelegate.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A83800AC280741760026E103 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A839D32527F38E2D009C29F4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A839D32627F38E2E009C29F4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A873567728034C7900F7B376 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A83800AB280741340026E103 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A83800AC280741760026E103 /* Session.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		A87A720027B6C9E8003FAF66 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +124,7 @@
 		A87A720B27B6C9E8003FAF66 /* newVK */ = {
 			isa = PBXGroup;
 			children = (
+				A83800AB280741340026E103 /* Service */,
 				A882BF7D27C6729F00F6ED8F /* Resourse */,
 				A882BF7E27C6733200F6ED8F /* Controllers */,
 				A882BF7F27C6735E00F6ED8F /* Helper */,
@@ -288,6 +299,7 @@
 				A882BF7A27C6520D00F6ED8F /* AllPhotoController.swift in Sources */,
 				A882BF8527C678F900F6ED8F /* AllGroupsController.swift in Sources */,
 				A8E4620F27CADE0D00F4A103 /* AvatarView.swift in Sources */,
+				A83800AD280741760026E103 /* Session.swift in Sources */,
 				A8AD23DF27F8B0C200110D06 /* NewsCell.swift in Sources */,
 				A882BF7827C63A9300F6ED8F /* User.swift in Sources */,
 				A8E856F727F8D24800C0A5FD /* PhotoNewsCell.swift in Sources */,
