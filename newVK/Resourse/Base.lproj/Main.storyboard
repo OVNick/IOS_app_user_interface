@@ -520,7 +520,7 @@
         <!--Друзья-->
         <scene sceneID="WZM-1E-RGI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RV4-IZ-lmD" customClass="CustomNavigationController" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RV4-IZ-lmD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="person.2" catalog="system" id="so7-HT-lr0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bwb-jN-ewr">

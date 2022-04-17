@@ -13,6 +13,7 @@ class FriendsController: UITableViewController {
     
     var objects = FriendsInstances()
     var sortedObjects = [Character: [User]]()
+    let service = RequestService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,8 @@ class FriendsController: UITableViewController {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         self.navigationItem.backBarButtonItem = backItem
+        
+        service.APIRequest(requestType: .friendsGet, sender: nil)
     }
         
     private func sort(objects: [User]) -> [Character: [User]] {
