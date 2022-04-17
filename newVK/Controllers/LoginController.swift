@@ -6,95 +6,70 @@
 //
 
 import UIKit
+import WebKit
 
 class LoginController: UIViewController {
-    
-    @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var loginTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
-    @IBOutlet var animationView: UIView!
-    @IBOutlet var animationCenterImage: UIImageView!
-    @IBOutlet var animationRightImage: UIImageView!
-    @IBOutlet var animationLeftImage: UIImageView!
-    @IBOutlet var entryButton: UIButton!
-    @IBOutlet var registrationButton: UIButton!
-    @IBOutlet var forgotButton: UIButton!
-    @IBOutlet var logoImage: UIImageView!
-    
-    
+    @IBOutlet weak var webView: WKWebView! {
+        didSet {
+            webView.navigationDelegate = self }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadAuth()
+    }
+}
 
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(hideScreen))
-        view.addGestureRecognizer(tapGR)
-    }
-    
-    @objc func hideScreen() {
-        view.endEditing(true)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(willShowKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(willHideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func willShowKeyboard(_ notification: Notification) {
-        guard let info = notification.userInfo as NSDictionary?,
-              let keyboardSize = info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue else { return }
-        
-        let keyboardHeight = keyboardSize.cgRectValue.size.height
-        
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
-    }
-    
-    @objc func willHideKeyboard(_ notification: Notification) {
-        guard let info = notification.userInfo as NSDictionary?,
-              let keyboardSize = info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue else { return }
-        
-        let keyboardHeight = keyboardSize.cgRectValue.size.height
-        
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -keyboardHeight, right: 0)
-    }
-    
-    @IBAction func tapButtonLogin(_ sender: Any) {
-        guard let login = loginTextField.text,
-              let password = passwordTextField.text,
-              login == "",
-              password == "" else {
-                  show(message: "Неверный логин или пароль!")
-                  return
-              }
-        
-        self.loginTextField.alpha = 0
-        self.passwordTextField.alpha = 0
-        self.entryButton.alpha = 0
-        self.forgotButton.alpha = 0
-        self.registrationButton.alpha = 0
-        
-        UIView.animate(withDuration: 0.1,
-                       delay: 0,
-                       options: [.repeat, .autoreverse]) {
-            self.animationLeftImage.tintColor = .white
+// MARK: - WKNavigationDelegate
+extension LoginController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse:
+                 WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        guard let url = navigationResponse.response.url,
+              url.path == "/blank.html",
+              let fragment = url.fragment else {
+            decisionHandler(.allow)
+            return
         }
         
-        UIView.animate(withDuration: 0.5,
-                       delay: 0.1,
-                       options: [.repeat, .autoreverse]) {
-            self.animationCenterImage.tintColor = .white
-        }
+        let params = fragment
+            .components(separatedBy: "&")
+            .map { $0.components(separatedBy: "=") }
+            .reduce([String: String]()) { result, param in
+                var dict = result
+                let key = param[0]
+                let value = param[1]
+                dict[key] = value
+                return dict
+            }
         
-        UIView.animate(withDuration: 0.5,
-                       delay: 0.2,
-                       options: [.repeat, .autoreverse]) {
-            self.animationRightImage.tintColor = .white
+        if let token = params["access_token"], let id = params["user_id"] {
+            Session.instance.userId = Int(id)
+            Session.instance.token = token
+            print(token)
+            decisionHandler(.cancel)
+            performSegue(withIdentifier: "Login", sender: nil)
         }
+    }
+}
+
+private extension LoginController {
+    func loadAuth() {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "oauth.vk.com"
+        urlComponents.path = "/authorize"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "client_id", value: "8136636"),
+            URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
+            URLQueryItem(name: "display", value: "mobile"),
+            URLQueryItem(name: "scope", value: "offline, friends, photos, groups"),
+            URLQueryItem(name: "response_type", value: "token"),
+            URLQueryItem(name: "revoke", value: "1"),
+            URLQueryItem(name: "v", value: "5.131")
+        ]
         
-        UIView.animate(withDuration: 1,
-                       delay: 0.2) {
-            self.logoImage.alpha = 0
-        } completion: { _ in
-            self.performSegue(withIdentifier: "Login", sender: nil)
-        }
+        guard let url = urlComponents.url else { return }
+        let request = URLRequest(url: url)
+        webView.load(request)
     }
 }

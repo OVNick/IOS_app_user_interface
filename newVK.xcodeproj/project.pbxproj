@@ -39,6 +39,7 @@
 		A8E856F827F8D24800C0A5FD /* PhotoNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8E856F627F8D24800C0A5FD /* PhotoNewsCell.xib */; };
 		A8E856FA27F8D5FD00C0A5FD /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E856F927F8D5FD00C0A5FD /* NewsController.swift */; };
 		A8E856FC27F902FC00C0A5FD /* NewsCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E856FB27F902FC00C0A5FD /* NewsCollectionLayout.swift */; };
+		A8F47C08280C3F0C0025BF1E /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F47C07280C3F0B0025BF1E /* RequestService.swift */; };
 		A8F48D2127C2CAC70031A024 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F48D2027C2CAC70031A024 /* LoginController.swift */; };
 		A8F73EDB27C3D2C500AA198B /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F73EDA27C3D2C500AA198B /* UIViewController + Extension.swift */; };
 		A8F99A2927CC2CDE001B0AB3 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F99A2827CC2CDE001B0AB3 /* LikeControl.swift */; };
@@ -81,6 +82,7 @@
 		A8E856F627F8D24800C0A5FD /* PhotoNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoNewsCell.xib; sourceTree = "<group>"; };
 		A8E856F927F8D5FD00C0A5FD /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		A8E856FB27F902FC00C0A5FD /* NewsCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionLayout.swift; sourceTree = "<group>"; };
+		A8F47C07280C3F0B0025BF1E /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		A8F48D2027C2CAC70031A024 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A8F73EDA27C3D2C500AA198B /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		A8F99A2827CC2CDE001B0AB3 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				A83800AC280741760026E103 /* Session.swift */,
+				A8F47C07280C3F0B0025BF1E /* RequestService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				A8AD23DF27F8B0C200110D06 /* NewsCell.swift in Sources */,
 				A882BF7827C63A9300F6ED8F /* User.swift in Sources */,
 				A8E856F727F8D24800C0A5FD /* PhotoNewsCell.swift in Sources */,
+				A8F47C08280C3F0C0025BF1E /* RequestService.swift in Sources */,
 				A8B32CE327D54F1400A1B011 /* PhotoController.swift in Sources */,
 				A882BF8B27C6837300F6ED8F /* AllGroupsCell.swift in Sources */,
 				A8844B662803437900199551 /* CustomAnimator.swift in Sources */,
